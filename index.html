@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jingle Testing</title>
+</head>
+
+<body>
+  <div id="settings">
+    <h1>Connection Settings</h1>
+    <form id="loginInfo">
+      <label>
+        JID: <input id="jid" type="text" name="jid" value="adam@chat.a-nord.se"/>
+      </label>
+      <label>
+        Password: <input id="password" name="password" value="password"/>
+      </label>
+      <label>WebSocket URL:
+        <input id="url" type="text" name="url" value="wss://chat.a-nord.se/xmpp-websocket/"/></label>
+      <label><input id="screen" type="checkbox" />Use screen</label>
+      <input id="connect" type="submit" value="Connect" />
+    </form>
+    <h2>My full JID:</h2>
+    <p id="myJID"></p>
+    <h2>Start Video Session</h2>
+    <form id="callInfo">
+      <label>Peer JID:
+        <input id="peer" type="text" name="peer" placeholder="otherperson@example.com/resource" /></label>
+      <input id="call" type="submit" value="Call" />
+    </form>
+    <h2>Send a file</h2>
+    <form id="fileInfo">
+      <label>Peer JID:
+        <input id="filepeer" type="text" name="peer" placeholder="otherperson@example.com" value="test@chat.a-nord.se"/></label>
+      <input type="file" id="files" name="files" />
+    </form>
+    <form id="snapshot">
+      <label>Peer JID:
+        <input id="snappeer" type="text" name="peer" placeholder="otherperson@example.com" /></label>
+      <input id="snapshot" type="submit" value="Send snapshot" />
+    </form>
+    <a id="received"></a>
+  </div>
+
+  <h2>Local Video</h2>
+  <video id="localVideo"></video>
+
+  <h2>Remote Video</h2>
+  <video id="remoteVideo"></video>
+  <script type="module" src="/main.js"></script>
+</body>
